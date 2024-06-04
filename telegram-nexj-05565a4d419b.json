@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "telegram-nexj",
+  "private_key_id": "05565a4d419b57567bd7e7abe60af60ab2011359",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQC/vq2ucRzlmvhC\nLNIxxUQi/1Whs7u85V+swXWTbvEvILG1/8SPmjUV3t+QYctVQUG3jSn/UMt9sV0b\nRZczs7cCrAk5/voiHaiX/+bWFWTzKPQxbHWQHw663NBWMBlWVrRBXEKnuxh4FDZx\nZ4tFsEa20biNXO3p+6yrxQlVTqWPc1b3nsGv/cthp72HojFouL6FS/4MDnWdimWr\nLn/nBhA7RUCfImj7fYidjPy7uAqskAP3EM85T2ZFYCsWrJfkOJF+/DfJAfmywClI\nmgcRqvAR5CLm6CvTmuLMBGcZREDuUEYQlyYfw4qG/eqO/M2yPog2iz3F4cg8xxoH\nb0WvxgsFAgMBAAECgf9r+srURzQpbpwKqDMMKYsK1RU5etNpYm1UBvOvk0qUv6n+\n/t+H/yTmAXI6XNhPqprXmHzjdcci1unCnJi0WlXgVgGG0jsKpf52RXuOvtLwHKAS\nioGqJ9NOaAuV0yscSWI5bJDHjxVjNKl0M7C6uLUZ6gDZmvu1njAfNgGLiOleCRuo\nUt9fw2NDnHgNeIsBtsQpqReIyojBAINRnns8PHyF2ZOymvvXcCfP8tsfRoxecyz2\nIdB0UyJXCO7jXAdRz0kq/Z91Uj00P9XuPbsujk+6I2SYFzvrmpjSNrGVqCVNmPMa\naG69nsFuQXHEpEPD0cxZFFWZcBfBSj9QxkkasQECgYEA8VDe8pbw7MxN9hprPxll\n4CJ/dyUq6d4TETGv8yah4KyWADANECkHpazOztrf69dAC6ULkR3LHmh1wPiCoQrU\neIcm5V8ryKIdw91BHN8CrUmqU+UaZ9KGHoZCKCgFszWP7/kMJBAzjoWSW3+N0tgh\n7R9R39u0KD8+nbKoRl7p+4UCgYEAy2mbpjNx6qtAzQ4GPYWecbGnFJ0bp8iTkEeK\nJpwxxqAj+emUlLLupAysa0+X5EYS7KO/y7c8zHQk0wWsCS0jGLY7gGB3ItBu1GDa\nQVhTVYQ+7DCX6UZTemrLGR9h9H0g9djB/fMOqMCWGh3ITLN8+X+d9pr4mp3aKiof\nAxUeKYECgYAaJKTCq0+Wl9uqWdpcj6fVzGb6xXAMvh5asoNZWEoZSRlHE+2WXpuR\ne1M8XcH8julFWbATHKMwvChlq4abY8z48cto9hKMPePzoDi5o/9qPpzRUfS2Yrxc\n+jaYmx1i+N6LJPQHxCmRuy7L8tmuifPC+K2qDudJpPBnrT9FwGqg8QKBgFLSQSm+\nsJdX+x6Co0/RY93u85SVE3mRVWPdfQaTekDhW0SaMoEJCdmJv3pCAhpT3ci0M5eC\nmCK293dkS9PAqRWavUdb/6YRL88RUExi5itfmS8Z6gB1PfAOI3urJ3sgp5byFqqL\nmGBlabhgf/ma6zu7FloeZzKtKvMYC2B57LoBAoGBAKyq1W5p1dCfR/+94I2Cu2G4\nYleyzfcWRnrxeN8kgtDWkvlnzGeeZROuboaZOpAGeQUimWQ5nISbJGZQIrtrYIef\nRUSpcsyyFGIO7DIHLe41idMl1NiOB490fwnZ5meEY3ipyp9iuOA/N7ySeRX+V0CD\nt5jWbzDDsKiBI0J4t6ch\n-----END PRIVATE KEY-----\n",
+  "client_email": "fiverr-client@telegram-nexj.iam.gserviceaccount.com",
+  "client_id": "110097675330000956176",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/fiverr-client%40telegram-nexj.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
