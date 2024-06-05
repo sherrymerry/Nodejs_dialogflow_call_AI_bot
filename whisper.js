@@ -21,17 +21,46 @@
 // });
 
 
-import fs from "fs";
-import OpenAI from "openai";
+// import fs from "fs";
+// import OpenAI from "openai";
 
-const openai = new OpenAI();
+// const openai = new OpenAI();
 
-async function main() {
-    const translation = await openai.audio.translations.create({
-        file: fs.createReadStream("/path/to/file/german.mp3"),
-        model: "whisper-1",
-    });
+// async function main() {
+//     const translation = await openai.audio.translations.create({
+//         file: fs.createReadStream("/assets/audios/WhatsApp Ptt 2024-06-04 at 3.31.35 AM.ogg/french.mp3"),
+//         model: "whisper-1",
+//     });
 
-    console.log(translation.text);
+//     console.log(translation.text);
+// }
+// main();
+
+
+const axios = require('axios');
+const fs = require('fs');
+const FormData = require('form-data');
+
+async function transcribeAudio(filePath) {
+    const form = new FormData();
+    form.append('file', fs.createReadStream(filePath));
+    // Add language parameter if Whisper API supports it, assuming 'language' is the parameter name
+    form.append('language', 'fr');
+
+    try {
+        const response = await axios.post('YOUR_WHISPER_API_URL', form, {
+            headers: form.getHeaders()
+        });
+        return response.data; // This should contain the transcribed text in French
+    } catch (error) {
+        console.error('Error transcribing audio:', error);
+        throw error;
+    }
 }
-main();
+
+// Example usage
+transcribeAudio('assets/audios/-demo.ogg/audio.mp3').then(transcription => {
+    console.log('Transcription:', transcription);
+}).catch(error => {
+    console.error('Transcription failed:', error);
+});
