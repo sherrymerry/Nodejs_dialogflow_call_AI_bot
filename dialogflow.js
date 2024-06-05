@@ -75,6 +75,7 @@
 //     console.log(`Server is running on port ${PORT}`);
 // });
 
+
 const dialogflow = require('@google-cloud/dialogflow');
 const { WebhookClient } = require('dialogflow-fulfillment');
 const express = require("express");
@@ -91,6 +92,14 @@ app.post("/webhook", async (req, res) => {
 
     try {
         const agent = new WebhookClient({ request: req, response: res });
+
+        function welcome(agent) {
+            agent.add('Bonjour! Comment puis-je vous aider aujourd\'hui?');
+        }
+
+        function fallback(agent) {
+            agent.add("Je suis désolé, je n'ai pas compris. Pouvez-vous reformuler?");
+        }
 
         function HeatingTypeIntent(agent) {
             const heatingType = agent.parameters.heating_type;
@@ -118,12 +127,16 @@ app.post("/webhook", async (req, res) => {
             agent.add("Combien de radiateurs avez-vous ?");
         }
 
+        // Map intents to handler functions
         let intentMap = new Map();
+        intentMap.set('Default Welcome Intent', welcome);
+        intentMap.set('Default Fallback Intent', fallback);
         intentMap.set('HeatingTypeIntent', HeatingTypeIntent);
         intentMap.set('RadiatorsCountIntent', RadiatorsCountIntent);
         intentMap.set('IndividualOrCollectiveHeatingIntent', IndividualOrCollectiveHeatingIntent);
         intentMap.set('BoilerTypeIntent', BoilerTypeIntent);
-        
+
+        // Handle the request with the mapped intents
         agent.handleRequest(intentMap);
     } catch (error) {
         console.error('Error handling the request:', error);
