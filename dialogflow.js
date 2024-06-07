@@ -74,19 +74,22 @@
 // app.listen(PORT, () => {
 //     console.log(`Server is running on port ${PORT}`);
 // });
-
+require('dotenv').config();
 
 const dialogflow = require('@google-cloud/dialogflow');
 const { WebhookClient } = require('dialogflow-fulfillment');
-const express = require("express");
+const express = require('express');
 const bodyParser = require('body-parser');
+const { transcribeAudio } = require('./scripts/transcription');
+const { initiateCall } = require('./scripts/goautodial');
+const { uploadToOVH, downloadFromOVH } = require('./scripts/ovh');
 
 const app = express();
 app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 8080;
 
-app.post("/webhook", async (req, res) => {
+app.post('/webhook', async (req, res) => {
     console.log('Received a request at /webhook');
     console.log('Request body:', req.body);
 
@@ -101,7 +104,7 @@ app.post("/webhook", async (req, res) => {
             agent.add("Je suis désolé, je n'ai pas compris. Pouvez-vous reformuler?");
         }
 
-        function HeatingTypeIntent(agent) {
+        async function HeatingTypeIntent(agent) {
             const heatingType = agent.parameters.heating_type;
             if (heatingType === 'électrique') {
                 agent.add("Combien de radiateurs électriques avez-vous chez vous ?");
@@ -114,7 +117,7 @@ app.post("/webhook", async (req, res) => {
             agent.add("Merci. Quelle est la superficie totale de votre maison hors garage ou parking ?");
         }
 
-        function IndividualOrCollectiveHeatingIntent(agent) {
+        async function IndividualOrCollectiveHeatingIntent(agent) {
             const heatingSystem = agent.parameters.heating_system;
             if (heatingSystem === 'individuel') {
                 agent.add("Quel type de chaudière avez-vous ?");

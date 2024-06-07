@@ -1,8 +1,10 @@
+require('dotenv').config();
+
 const ovh = require('ovh')({
     endpoint: 'ovh-eu', // or 'ovh-us'
-    appKey: 'YOUR_APP_KEY',
-    appSecret: 'YOUR_APP_SECRET',
-    consumerKey: 'YOUR_CONSUMER_KEY'
+    appKey: process.env.OVH_APP_KEY,
+    appSecret: process.env.OVH_APP_SECRET,
+    consumerKey: process.env.OVH_CONSUMER_KEY
 });
 
 async function uploadToOVH(localFilePath, ovhFilePath) {
@@ -35,3 +37,18 @@ async function downloadFromOVH(ovhFilePath, localFilePath) {
         });
     });
 }
+
+// Example usage
+uploadToOVH('assets/audios/synthesis.mp3', 'remote/synthesis.mp3').then(response => {
+    console.log('File uploaded:', response);
+}).catch(error => {
+    console.error('File upload failed:', error);
+});
+
+downloadFromOVH('remote/synthesis.mp3', 'assets/audios/downloaded_synthesis.mp3').then(() => {
+    console.log('File downloaded successfully');
+}).catch(error => {
+    console.error('File download failed:', error);
+});
+
+module.exports = { uploadToOVH, downloadFromOVH };

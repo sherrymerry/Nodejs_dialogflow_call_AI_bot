@@ -59,7 +59,7 @@ async function transcribeAudio(filePath) {
 }
 
 // Example usage
-transcribeAudio('assets/audios/-demo.ogg/audio.mp3').then(transcription => {
+transcribeAudio('assets/audios/synthesis.mp3').then(transcription => {
     console.log('Transcription:', transcription);
 }).catch(error => {
     console.error('Transcription failed:', error);
