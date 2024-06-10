@@ -38,7 +38,6 @@ async function downloadFromOVH(ovhFilePath, localFilePath) {
     });
 }
 
-// Example usage
 uploadToOVH('assets/audios/synthesis.mp3', 'remote/synthesis.mp3').then(response => {
     console.log('File uploaded:', response);
 }).catch(error => {
